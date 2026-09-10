@@ -288,6 +288,21 @@ th{font-family:var(--disp);font-variation-settings:"wdth" 80;font-size:var(--t-x
 .film:hover .play{transform:translate(-50%,-50%) scale(1.08);background:var(--red-dark)}
 .film img{transition:transform .8s var(--ease-expo)}
 .film:hover img{transform:scale(1.03)}
+.certs{list-style:none;margin:var(--s5) 0 0;padding:0;border-top:1px solid var(--line)}
+.certs li{display:grid;grid-template-columns:1fr auto;gap:var(--s2) var(--s4);align-items:center;padding:var(--s4) 0;border-bottom:1px solid var(--line)}
+.certs .c-name{font-family:var(--disp);font-weight:600;font-size:1.0625rem;line-height:1.25}
+.certs .c-meta{grid-column:1;display:flex;flex-wrap:wrap;gap:var(--s2) var(--s3);align-items:center;font-size:var(--t-sm);color:var(--ink-2)}
+.certs .c-meta .no{font-family:var(--disp);font-variation-settings:"wdth" 85;letter-spacing:.02em;color:var(--ink)}
+.certs .btn{grid-column:2;grid-row:1/span 2;padding:8px 14px;min-height:40px;font-size:var(--t-sm)}
+.who{display:inline-flex;align-items:center;min-height:24px;padding:0 10px;border-radius:999px;font-family:var(--disp);font-variation-settings:"wdth" 85;font-weight:700;font-size:var(--t-xs);letter-spacing:.04em;text-transform:uppercase}
+.who.k{background:var(--red);color:#fff}
+.who.s{border:1px solid var(--ink-3);color:var(--ink-2)}
+.badges{display:flex;flex-wrap:wrap;gap:var(--s2)}
+.badge{border:1px solid var(--ink);border-radius:999px;padding:6px 12px;font-size:var(--t-sm);font-weight:500;line-height:1.2}
+.badge.dim{border-color:var(--line);color:var(--ink-2);background:var(--ground-2)}
+.sea .badge{border-color:var(--sea-muted);color:#fff}.sea .badge.dim{border-color:var(--sea-line);color:var(--sea-muted);background:transparent}
+.cert-row{display:grid;grid-template-columns:auto 1fr;gap:var(--s3);align-items:start;padding:var(--s3) 0;border-top:1px solid var(--line)}
+.cert-row:last-child{border-bottom:1px solid var(--line)}
 .gal{grid-template-columns:2fr 1fr 1fr;--g:var(--s3)}
 .gal div{aspect-ratio:1;overflow:hidden;border-radius:var(--r)}
 .gal div:first-child{aspect-ratio:2/1;grid-column:1/-1}
@@ -415,10 +430,8 @@ th{font-family:var(--disp);font-variation-settings:"wdth" 80;font-size:var(--t-x
     <div class="grid two" style="align-items:start">
       <h2 class="h-l">Import done by the book, with the paperwork to show for it.</h2>
       <div>
-        <div class="lg">
-          <div>Held by Kozahan</div><div class="row-items"><span>FDA facility registration</span><span>FSVP importer of record</span><span>Seafood HACCP plan</span></div>
-          <div>Held by our suppliers</div><div class="row-items"><span>BRCGS Food Safety</span><span>GLOBAL G.A.P.</span><span>ISO 22000</span><span>MSC chain of custody, by product</span></div>
-        </div>
+        <div class="cert-row"><span class="who k">Kozahan</span><div class="badges"><span class="badge">FDA facility registration</span><span class="badge">FSVP importer of record</span><span class="badge">Seafood HACCP plan</span></div></div>
+        <div class="cert-row"><span class="who s">Suppliers</span><div class="badges"><span class="badge dim">BRCGS Food Safety</span><span class="badge dim">GLOBAL G.A.P.</span><span class="badge dim">ISO 22000</span><span class="badge dim">MSC chain of custody, by product</span></div></div>
         <p class="p" style="margin-top:var(--s4);font-size:var(--t-sm)">Certificate numbers and PDFs are on the <a class="link" href="#company">Company page</a>.</p>
       </div>
     </div>
@@ -522,7 +535,7 @@ th{font-family:var(--disp);font-variation-settings:"wdth" 80;font-size:var(--t-x
         <details><summary>Do you handle Amazon FBA for brands?</summary><p>We do. We prep, label and ship to Amazon from our warehouses, and run the listings and ads.</p></details>
       </div>
     </div>
-    <div class="panel"><h3 class="h-s" style="margin-bottom:var(--s3)">Certificates</h3><div class="lg"><div>Kozahan</div><div class="row-items num"><span>FDA Reg. 1234 5678 901</span><span>FSVP importer</span><span>HACCP</span></div><div>Suppliers</div><div class="row-items"><span>BRCGS</span><span>GLOBAL G.A.P.</span><span>ISO 22000</span></div></div><p class="p" style="margin-top:var(--s4);font-size:var(--t-sm)">Each certificate links to its PDF on the Company page.</p><div style="margin-top:var(--s4)"><a class="link" href="#company">See all certificates</a></div></div>
+    <div class="panel"><h3 class="h-s" style="margin-bottom:var(--s3)">Certificates</h3><div class="cert-row"><span class="who k">Kozahan</span><div class="badges"><span class="badge num">FDA Reg. 1234 5678 901</span><span class="badge">FSVP importer</span><span class="badge">HACCP</span></div></div><div class="cert-row"><span class="who s">Suppliers</span><div class="badges"><span class="badge dim">BRCGS</span><span class="badge dim">GLOBAL G.A.P.</span><span class="badge dim">ISO 22000</span></div></div><p class="p" style="margin-top:var(--s4);font-size:var(--t-sm)">Each certificate links to its PDF on the Company page.</p><div style="margin-top:var(--s4)"><a class="link" href="#company">See all certificates</a></div></div>
   </div>
 </section>
 <div class="band sea"><div class="wrap"><h2 class="h-l">Not sure which door is yours? Tell us what you're trying to do.</h2><div class="cta"><a class="btn red" href="#partner">Talk to us</a></div></div></div>
@@ -635,16 +648,14 @@ th{font-family:var(--disp);font-variation-settings:"wdth" 80;font-size:var(--t-x
     </div>
     <div>
       <h2 class="h-l">Certificates, ours and our suppliers'.</h2>
-      <div class="tbl" style="margin-top:var(--s5)"><table>
-        <thead><tr><th>Certificate</th><th>Holder</th><th>Number</th><th>Valid to</th><th>File</th></tr></thead>
-        <tbody class="num">
-          <tr><td>FDA food facility registration</td><td>Kozahan Imports Corp</td><td>1234 5678 901</td><td>Dec 2026</td><td><a class="link" href="#">PDF</a></td></tr>
-          <tr><td>FSVP importer of record</td><td>Kozahan Imports Corp</td><td>On file per supplier</td><td>Ongoing</td><td><a class="link" href="#">Summary</a></td></tr>
-          <tr><td>Seafood HACCP plan</td><td>Kozahan Imports Corp</td><td>Rev. 3, 2026</td><td>Annual review</td><td><a class="link" href="#">PDF</a></td></tr>
-          <tr><td>BRCGS Food Safety, Grade A</td><td>Çakan Seafood (supplier)</td><td>BRC-TR-04412</td><td>Mar 2027</td><td><a class="link" href="#">PDF</a></td></tr>
-          <tr><td>ASC farm certification</td><td>Aegean farms (supplier)</td><td>ASC-C-01987</td><td>Aug 2027</td><td><a class="link" href="#">PDF</a></td></tr>
-          <tr><td>Dolphin-safe, pole and line</td><td>Dardanel (supplier)</td><td>EII-2026</td><td>Annual</td><td><a class="link" href="#">PDF</a></td></tr>
-        </tbody></table></div>
+      <ul class="certs">
+        <li><div class="c-name">FDA food facility registration</div><div class="c-meta"><span class="who k">Kozahan</span><span class="no num">No. 1234 5678 901</span><span>valid to Dec 2026</span></div><a class="btn" href="#">PDF</a></li>
+        <li><div class="c-name">FSVP importer of record</div><div class="c-meta"><span class="who k">Kozahan</span><span>on file for every supplier</span><span>ongoing</span></div><a class="btn" href="#">Summary</a></li>
+        <li><div class="c-name">Seafood HACCP plan</div><div class="c-meta"><span class="who k">Kozahan</span><span class="no">Rev. 3, 2026</span><span>annual review</span></div><a class="btn" href="#">PDF</a></li>
+        <li><div class="c-name">BRCGS Food Safety, Grade A</div><div class="c-meta"><span class="who s">Supplier · Çakan Seafood</span><span class="no">BRC-TR-04412</span><span>valid to Mar 2027</span></div><a class="btn" href="#">PDF</a></li>
+        <li><div class="c-name">ASC farm certification</div><div class="c-meta"><span class="who s">Supplier · Aegean farms</span><span class="no">ASC-C-01987</span><span>valid to Aug 2027</span></div><a class="btn" href="#">PDF</a></li>
+        <li><div class="c-name">Dolphin-safe, pole and line</div><div class="c-meta"><span class="who s">Supplier · Dardanel</span><span class="no">EII-2026</span><span>annual</span></div><a class="btn" href="#">PDF</a></li>
+      </ul>
     </div>
   </div>
 </section>
